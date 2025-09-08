@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Librería Ara y Elu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+   <style>
+        body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: #333;
+    min-height: 100vh;
+}
+
+.banner-container {
+    position: relative;
+    width: 100%;
+    max-height: 800px;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 0;
+}
+
+.banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+h1 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 70px; /* Tamaño de fuente ajustado */
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.75);
+    color: #2c3e50;
+    padding: 15px 30px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+    text-shadow: none;
+    margin: 0;
+    text-align: center;
+    line-height: 1;
+    max-width: fit-content;
+}
+
+span {
+    font-family: 'Dancing Script', cursive;
+    font-size: 80px; /* Tamaño de fuente ajustado */
+    color: #8A2BE2;
+    text-shadow: 3px 3px 5px rgba(0,0,0,0.4);
+}
+
+.menu-title {
+    margin-top: 220px;
+    font-size: 2em; /* Tamaño de fuente ajustado */
+    margin-top: 350px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #2c3e50;
+    
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.menu-title .fas.fa-arrow-down {
+    color: #8A2BE2;
+    font-size: 0.8em;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+.menu-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.menu-item {
+    background: linear-gradient(135deg, #3498db, #8e44ad);
+    color: white;
+    padding: 30px 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.menu-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+}
+
+.menu-item::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255,255,255,0.1);
+    transform: rotate(45deg);
+    transition: opacity 0.5s;
+    opacity: 0;
+}
+
+.menu-item:hover::after {
+    opacity: 1;
+}
+
+.menu-item h3 {
+    margin: 0 0 10px;
+    font-size: 1.4em; /* Tamaño de fuente ajustado */
+}
+
+.menu-item p {
+    margin: 0;
+    font-size: 1em; /* Tamaño de fuente ajustado */
+}
+
+.global-contact-section {
+    margin-top: 60px;
+    padding: 30px;
+    background-color: #e9ecef;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.global-contact-section h2 {
+    font-size: 2em;
+    color: #2c3e50;
+    margin-bottom: 25px;
+}
+
+.contact-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 15px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 1.1em;
+    margin: 0 10px 15px;
+}
+
+.contact-button i {
+    margin-right: 10px;
+    font-size: 1.4em;
+}
+
+.whatsapp-button {
+    background-color: #25D366;
+}
+.whatsapp-button:hover {
+    background-color: #1DA851;
+    transform: translateY(-3px);
+}
+
+.email-button {
+    background-color: #D44638;
+}
+.email-button:hover {
+    background-color: #B52F24;
+    transform: translateY(-3px);
+}
+
+.phone-button {
+    background-color: #007bff;
+}
+.phone-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+}
+
+/* Media Queries para dispositivos móviles */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 45px; /* Tamaño de fuente ajustado */
+        padding: 10px 20px;
+    }
+    span {
+        font-size: 55px; /* Tamaño de fuente ajustado */
+    }
+    .menu-title {
+        font-size: 1.8em; /* Tamaño de fuente ajustado */
+        margin-top: 180px;
+    }
+    .menu-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+    }
+    .menu-item {
+        padding: 25px 15px;
+    }
+    .contact-button {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 35px; /* Tamaño de fuente ajustado */
+        padding: 8px 15px;
+    }
+    span {
+        font-size: 45px; /* Tamaño de fuente ajustado */
+    }
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+}
+    </style>
+
+</head>
+<body>
+    <div class="banner-container">
+        <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f" alt="Negocio de librería" class="banner-img" />
+        <h1>Librería <span style="display: block;">Ara y Elu</span></h1> 
+    </div>
+    
+<br>    
+<h1 class="menu-title">Nuestros Servicios <i class="fas fa-arrow-down"></i></h1>
+    
+    <div class="menu-container">
+        <div class="menui-grid">
+            <div class="menu-item">
+                <h3>Artículos de librería</h3>
+                <p>Todo lo que necestás para estudiar y trabajar.</p>
+            </div>
+            <div class="menu-item">
+                <h3>Fotocopias</h3>
+                <p>Blanco y negro o color, rápido y económico.</p>
+            </div>
+            <div class="menu-item">
+                <h3>Impresiones</h3>
+                <p>Desde documentos hasta gráficos de alta calidad.</p>
+            </div>
+            <div class="menu-item">
+                <h3>Papel común</h3>
+                <p>Ideal para uso diario en oficina o escuela.</p>
+            </div>
+            <div class="menu-item">
+                <h3>Papel fotográfico</h3>
+                <p>Impresiones brillantes y profesionales.</p>
+            </div>
+            <div class="menu-item">
+                <h3>Encuadernación</h3>
+                <p>Presentá tus trabajos con estilo y durabilidad.</p>
+            </div>
+            <div class="menu-item">
+                <h3>Plastificado</h3>
+                <p>Protegé tus documentos importantes.</p>
+            </div>
+            <div class="menu-item">
+                <h3>Foto carnet</h3>
+                <p>Fotos instantáneas para trámites y documentos.</p>
+            </div>
+        </div>
+    </div>        <div class="global-contact-section">
+            <h2>¿Necesitas ayuda o más información? ¡Contáctanos!</h2>
+            <a href="https://wa.me/5492645058061" target="_blank" class="contact-button whatsapp-button">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+            <a href="tel:+542645058061" class="contact-button phone-button">
+                <i class="fas fa-phone"></i> Llamar
+            </a>
+            <a href="mailto:nelitanelita@hotmail.com" class="contact-button email-button">
+                <i class="fas fa-envelope"></i> Email
+            </a>
+        </div>
+    </div>
+</body>
+</html>
